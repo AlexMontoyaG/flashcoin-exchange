@@ -1,0 +1,380 @@
+:root {
+    --primary-color: #1a1a1a;
+    --secondary-color: #f5f5f5;
+    --accent-color: #007bff;
+    --text-color: #333;
+    --border-color: #e0e0e0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+}
+
+.app-container {
+    max-width: 600px;
+    margin: 0 auto;
+    background: white;
+    min-height: 100vh;
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    background: white;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+.logo img {
+    width: 160px;
+    height: 90px;
+    max-width: none;
+    min-width: 0;
+    min-height: 0;
+    flex: none;
+}
+
+.logo span {
+    display: none;
+}
+
+.back-btn, .menu-btn {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.steps-indicator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem 1rem;
+    gap: 1rem;
+}
+
+.step {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #e0e0e0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.step.active {
+    background: var(--primary-color);
+}
+
+.step-line {
+    flex: 1;
+    height: 2px;
+    background: #e0e0e0;
+    max-width: 80px;
+}
+
+.step-content {
+    display: none;
+    padding: 1rem;
+}
+
+.step-content.active {
+    display: block;
+}
+
+h2 {
+    text-align: center;
+    padding: 1rem 0;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.exchange-container {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.exchange-section {
+    margin-bottom: 1rem;
+}
+
+.currency-input {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-top: 0.5rem;
+}
+
+.currency-input input[type="number"] {
+    text-align: right;
+    /* Ocultar flechas en Chrome, Safari, Edge, Opera */
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+    margin: 0;
+}
+
+.currency-input input[type="number"]::-webkit-outer-spin-button,
+.currency-input input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.currency-input span {
+    text-align: right;
+    font-size: 1.2rem;
+    margin-left: auto;
+}
+
+.currency-icon {
+    width: 30px;
+    height: 30px;
+}
+
+input[type="number"] {
+    border: none;
+    font-size: 1.2rem;
+    width: 100%;
+    outline: none;
+}
+
+.min-amount-warning {
+    color: #dc3545;
+    font-size: 1rem;
+    margin: 0.8rem 0;
+    font-weight: bold;
+    display: none;
+}
+
+.bank-selection select {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: white;
+    margin-top: 0.5rem;
+}
+
+.continue-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: none;
+}
+
+.continue-btn.disabled,
+.continue-btn:disabled,
+#finalizeBtn.disabled,
+#finalizeBtn:disabled {
+    background: #cccccc;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.form-container {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.input-group {
+    margin-bottom: 1.5rem;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.input-group input,
+.input-group select {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+.button-group {
+    display: flex;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.button-group button {
+    flex: 1;
+    padding: 1rem;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    width: 100%;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.back-btn {
+    background: white;
+    border-radius: 8px;
+    font-weight: bold;
+    color: var(--primary-color);
+    cursor: pointer;
+    border: 1px solid black;
+}
+
+.back-btn:hover {
+    background: #f5f5f5;
+}
+
+.wallet-container {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
+    text-align: center;
+}
+
+.qr-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 1.5rem 0;
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+}
+
+#qrCode {
+    padding: 1rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.wallet-address {
+    background: #f5f5f5;
+    padding: 1rem;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+    word-break: break-all;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.wallet-address p {
+    flex: 1;
+    min-width: 200px;
+    font-size: 0.9rem;
+    margin-right: 0.5rem;
+}
+
+.copy-btn {
+    background: var(--accent-color);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    min-width: 100px;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+
+.copy-btn:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+    .wallet-address {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+        gap: 0.8rem;
+    }
+
+    .wallet-address p {
+        margin-right: 0;
+        text-align: center;
+    }
+
+    .copy-btn {
+        width: 100%;
+        margin: 0 auto;
+        padding: 1rem;
+    }
+}
+
+.summary {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+}
+
+.amount {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
+}
+
+.home-btn {
+    width: 100%;
+    padding: 1rem;
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 1rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+}
+
+.home-btn:hover {
+    opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+    .button-group {
+        flex-direction: column;
+    }
+}

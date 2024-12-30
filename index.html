@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FLASHCOIN - Intercambio WLD</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <header>
+            <div class="logo">
+                <img src="assets/FLASHCOIN.png" alt="FLASHCOIN">
+                <span>FLASHCOIN</span>
+            </div>
+        </header>
+
+        <main>
+            <div class="steps-indicator">
+                <div class="step active">1</div>
+                <div class="step-line"></div>
+                <div class="step">2</div>
+                <div class="step-line"></div>
+                <div class="step">3</div>
+            </div>
+
+            <!-- Step 1: WLD Exchange -->
+            <section id="step1" class="step-content active">
+                <h2>Intercambio de WorldCoin</h2>
+                <div class="exchange-container">
+                    <div class="exchange-section">
+                        <h3>ENVÍAS</h3>
+                        <div class="currency-input">
+                            <img src="assets/wld.png" alt="WLD" class="currency-icon">
+                            <input type="number" id="wldAmount" min="3" placeholder="0">
+                        </div>
+                    </div>
+
+                    <div class="exchange-section">
+                        <h3>RECIBES</h3>
+                        <div class="currency-input">
+                            <img src="assets/COL.png" alt="COP" class="currency-icon">
+                            <span id="copAmount">0</span>
+                        </div>
+                    </div>
+
+                    <p class="min-amount-warning">El monto mínimo de intercambio es de 3 WorldCoin</p>
+
+                    <div class="bank-selection">
+                        <h3>Método de consignación</h3>
+                        <select id="bankSelect">
+                            <option value="NEQUI">NEQUI</option>
+                            <option value="BANCOLOMBIA">BANCOLOMBIA</option>
+                            <option value="BANCO DE BOGOTA">BANCO DE BOGOTA</option>
+                            <option value="BBVA COLOMBIA">BBVA COLOMBIA</option>
+                            <option value="DAVIPLATA">DAVIPLATA</option>
+                            <option value="BANCO DAVIVIENDA S.A.">BANCO DAVIVIENDA S.A.</option>
+                        </select>
+                    </div>
+                </div>
+                <button id="continueBtn" class="continue-btn">CONTINUAR</button>
+            </section>
+
+            <!-- Step 2: Personal Information -->
+            <section id="step2" class="step-content">
+                <div class="form-container">
+                    <div class="input-group">
+                        <label>Nombre completo</label>
+                        <input type="text" id="fullName" placeholder="Ingrese su nombre completo">
+                    </div>
+                    <div class="input-group">
+                        <label>Correo electrónico</label>
+                        <input type="email" id="email" placeholder="Ingrese su correo electrónico">
+                    </div>
+                    <div class="input-group">
+                        <label id="phoneLabel">Teléfono Nequi</label>
+                        <input type="tel" id="phone" placeholder="Ingrese su número de teléfono">
+                    </div>
+                    <div class="input-group">
+                        <label>Número de documento</label>
+                        <input type="text" 
+                               id="documentNumber" 
+                               placeholder="Ingrese su número de documento" 
+                               minlength="8" 
+                               pattern="\d*" 
+                               inputmode="numeric">
+                    </div>
+                    <div class="input-group account-type" id="accountTypeGroup">
+                        <label>Tipo de cuenta</label>
+                        <select id="accountType">
+                            <option value="savings">Ahorro</option>
+                            <option value="checking">Corriente</option>
+                        </select>
+                    </div>
+                    <div class="input-group" id="accountNumberGroup">
+                        <label>Número de cuenta</label>
+                        <input type="text" id="accountNumber" placeholder="Ingrese su número de cuenta">
+                    </div>
+                </div>
+                <div class="button-group">
+                    <button id="backBtn" class="back-btn">Atrás</button>
+                    <button id="finalizeBtn" class="continue-btn">Finalizar</button>
+                </div>
+            </section>
+
+            <!-- Step 3: WLD Wallet Information -->
+            <section id="step3" class="step-content">
+                <div class="wallet-container">
+                    <h3>Envía WLD a esta dirección</h3>
+                    <div class="qr-container">
+                        <div id="qrCode"></div>
+                    </div>
+                    <div class="wallet-address">
+                        <p id="walletAddress">0x1234...5678</p>
+                        <button id="copyAddress" class="copy-btn">Copiar</button>
+                    </div>
+                    <div class="summary">
+                        <h4>Total a recibir:</h4>
+                        <p id="finalAmount" class="amount">COP 0</p>
+                    </div>
+                    <button id="homeBtn" class="home-btn">VOLVER AL INICIO</button>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+    <script src="app.js"></script>
+</body>
+</html>
